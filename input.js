@@ -43,7 +43,7 @@ const handleUserInput = (key) => {
   };
 
   if (key === 'k') {
-    connection.write(funMsg);
+    connection.write("Say: " + funMsg);
   }
 };
 
