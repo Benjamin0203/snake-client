@@ -1,12 +1,18 @@
+const { stdout } = require("process");
 
-const setupInput = () => {
+let connection;
+
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
+
   stdin.on('data', key => {
     handleUserInput(key);
-  })
+  });
+
   return stdin;
 
 };
